@@ -1,0 +1,19 @@
+===================================================================
+DATASET.CSV FILE DESCRIPTION
+===================================================================
+
+The CSV file ready for analysis is located at: '../../gen/data-preparation/output/dataset.csv
+
+The CSV file comprises of the following variables and its respective descriptions:
+- 'location': this column shows the location information within a Twitter user’s profile, which is set by the user at the account level. It can contain information about the user's city, state or country. It is important to remember that this column may not necessarily represent the real location that the user is currently Tweeting from.
+- 'text': this column contains the original Tweet text written by the users.
+- 'in_US': this binary column shows whether the Tweet was created from a user which its provided location is inside (1) or outside (0) the US region.
+- 'is_in_eng': this binary column shows whether the Tweet text was written in english (1) or not (0).
+- 'text_eng': this column contains the Tweet text written by the users and,in  case the Tweet was not written in english, it shows the Tweet english translation.
+- 'text_cleaned': this column contains the Tweet texted by the user, after running all the cleaning steps (i.e. translating to english, removing stop words, correcting spelling, lemmatizating)
+- 'score_neg': this column shows the individual Tweet negative score, using Vader.
+- 'score_neu': this column shows the individual Tweet neutral score, using Vader.
+- 'score_pos': this column shows the individual Tweet positive score, using Vader.
+- 'score_compound': this column shows the individual Tweet compound score, using Vader.
+- 'polarity': this column shows the individual Tweet polarity score, using sentiment function from TextBlob.
+- 'subjectivity': this column shows the individual Tweet subjectivity score, using sentiment function from TextBlob.

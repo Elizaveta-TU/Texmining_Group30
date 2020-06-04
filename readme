@@ -1,0 +1,110 @@
+===================================================================
+PROJECT NAME
+===================================================================
+
+DESCRIPTION:
+------------
+
+The main aim of this repository is to have a clean and basic structure, which can be easily adjusted to use in an actual project. In this project, the following steps are done:
+- Pipeline stage "data-preparation"
+  - Download raw JSON data in a zip file ('trump-rawdata.zip')
+  - Unzip data
+  - Parse JSON data to CSV file
+  - Load CSV file, and enrich textual data with text mining metrics using Python's TextBlob and VADER packages for sentiment analysis
+- Pipeline stage "analysis"
+  - Load final output file from previous pipeline stage, run precleaning code
+  - Produce figures and graphs outputs with simple statistics in an HTML file
+
+AUTHORS:
+Elizaveta Cherepanova
+Lambros Vagias
+Luciana Mari Omi Nagashima
+Mert Gul
+Pedro Gomes Ramalho
+
+LAST UPDATED:
+04-06-2020
+
+BUILD INSTRUCTIONS
+==================
+
+1) Dependencies
+- Python via the Anaconda distribution.
+
+- Before running the make file you should have (or install) the following libraries:
+    - TextBlob installation via `pip install -U textblob`
+    - Vader installation via `pip install -U vaderSentiment`
+    - WordCloud installation via `pip install wordcloud`
+    - Pillow installation via `pip install Pillow`
+    - Iphyton installation via `pip install IPython`
+    - Seaborn installation, via `pip install seaborn`
+    - Matplotlib installation, via `pip install matplotlib`
+
+- Open Python then type to install the following packages:
+
+    from zipfile import ZipFile
+    import os
+    import time
+    import datetime
+
+    import json
+    from tqdm import tqdm
+
+    import numpy as np
+    import pandas as pd
+
+    from textblob import TextBlob, Word
+
+    from tqdm import tqdm
+    import time
+
+    from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+    import re
+
+    import nltk
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+    from nltk.corpus import stopwords
+
+    from PIL import Image
+    from wordcloud import WordCloud, STOPWORDS
+    from IPython.display import Image as im
+
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+
+- Gnu Make install: See http://www.tilburgsciencehub.com/
+
+- Obtain raw data files and put them into \data\
+
+
+
+2) Directory structure
+
+The project pipeline consists of the following stages:
+
+\src\data-preparation       Code required to download raw data, unzip,
+                            data preparation (parsing and text mining)
+\src\analysis               Code required for generating the data analysis
+
+
+Each directory has a makefile, with running descriptions
+for each stage of the pipeline.
+
+For each pipeline stage, the \gen directory contains
+files generated on the basis of the \data and
+source code stored in \src.
+
+Each directory contains subdirectories,
+    \output (for final output files)
+    \temp (for any temporary files)
+
+For examining the results of the data analysis, the \gen directory contains the generated outputs of the analysis.
+
+
+
+3) How to run the project
+- Download this repository (either by forking and then cloning, or as a template)
+- Open Terminal in project's main directory, type make
+- The src/data-preparation and src/analysis directories contain the specific workflow for each stage of the pipeline.
+- Tested on Mac and Windows 10
