@@ -39,43 +39,16 @@ BUILD INSTRUCTIONS
     - Iphyton installation via `pip install IPython`
     - Seaborn installation, via `pip install seaborn`
     - Matplotlib installation, via `pip install matplotlib`
+    - Tqdm installation, via 'pip install tqdm' 
 
 - Open Python then type to install the following packages:
-
-    from zipfile import ZipFile
-    import os
-    import time
-    import datetime
-
-    import json
-    from tqdm import tqdm
-
-    import numpy as np
-    import pandas as pd
-
-    from textblob import TextBlob, Word
-
-    from tqdm import tqdm
-    import time
-
-    from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-    import re
-
+   
     import nltk
     nltk.download('stopwords')
     nltk.download('wordnet')
-    from nltk.corpus import stopwords
-
-    from PIL import Image
-    from wordcloud import WordCloud, STOPWORDS
-    from IPython.display import Image as im
-
-    import seaborn as sns
-    import matplotlib.pyplot as plt
+     
 
 - Gnu Make install: See http://www.tilburgsciencehub.com/
-
-- Obtain raw data files and put them into \data\
 
 
 
